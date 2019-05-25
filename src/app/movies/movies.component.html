@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row row mt-1 pt-4">
+    <div class="col-md-4 col-sm-12 col-xs-12">
+      <div class="view-search">
+        <div class="input-group input40">
+          <i class="fa fa-search border border-right-0" style="cursor: pointer;padding-top: 8px;padding-right:8px;padding-left: 5px;background-color: #EFEFEF;" aria-hidden="true"></i>
+          <input class="form-control border border-left-0 w-10" placeholder="Search" style="background-image: none !important; background-color: #EFEFEF;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="grid grid-pad">
+  <a routerLink="/movie-detail" *ngFor="let movie of movies" class="col-1-4">
+    <div class="module hero">
+      <h4>{{movie.title}}</h4>
+    </div>
+  </a>
+</div>
