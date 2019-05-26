@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MOVIES } from '../movie-data';
 import { Movie } from '../movie';
 import { Router } from '@angular/router';
 import { DataFlowService} from '../data-flow.service';
@@ -12,19 +11,22 @@ import { DataFlowService} from '../data-flow.service';
 })
 export class MoviesComponent implements OnInit {
 
-  movies = MOVIES;
- // selectedMovie: Movie;
+
+  movies: Movie[];
 
 
   constructor(private router: Router, private dataFlowService: DataFlowService) { }
 
   ngOnInit() {
+    this.getMovies();
+  }
 
+  getMovies() {
+    this.dataFlowService.getMovies().subscribe(movies => this.movies = movies);
   }
 
   onSelect(movie: Movie): void {
-    this.dataFlowService.setData(movie);
-  //  this.selectedMovie = movie;
+    this.dataFlowService.setMovie(movie);
     this.router.navigate(['movie-detail']);
   }
 }

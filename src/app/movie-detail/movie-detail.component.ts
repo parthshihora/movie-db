@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataFlowService } from '../data-flow.service';
+import { Location } from '@angular/common';
+import { Movie } from '../movie';
 
 
 @Component({
@@ -10,21 +12,24 @@ import { DataFlowService } from '../data-flow.service';
 })
 export class MovieDetailComponent implements OnInit {
 
+  @Input() movie: Movie;
 
-  constructor(private route: ActivatedRoute, private dataFlowService: DataFlowService) { }
 
-  data: Object
+  constructor(private route: ActivatedRoute, private dataFlowService: DataFlowService, private location: Location
+  ) { }
+
+
 
   ngOnInit() {
-   /* this.sub = this.route
-      .data
-      .subscribe(v => console.log(v));
-    this.route.params.subscribe(params => {
-      this.data = params;
-    });*/
+    this.movie = this.dataFlowService.getMovie();
+  }
 
-  this.data = this.dataFlowService.getData();
-    console.log('this is movie from details', this.data);
+
+  addComment(comment) {
+    this.movie.comment.push(comment);
+    console.log('this is selected movie with comment', this.movie);
+    this.dataFlowService.addComment(this.movie)
+      .subscribe(() => this.location.back());
   }
 
 }

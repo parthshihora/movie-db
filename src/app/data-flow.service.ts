@@ -1,29 +1,46 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Movie } from './movie';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataFlowService {
 
-  constructor(private router: Router,
-           //   private companyServiceService: CompanyServiceService
-  ) { }
+  constructor( private http: HttpClient ) { }
 
-  private data;
+  private movie;
+  private url = 'api/movies';
 
-  setData(data) {
-    this.data = data;
-    console.log('this is movie', this.data);
+  setMovie(movie) {
+    this.movie = movie;
   }
 
-  getData() {
-    const temp = this.data;
+  getMovie() {
+    const temp = this.movie;
     this.clearData();
     return temp;
   }
 
+  getMovies (): Observable<Movie[]> {
+    return this.http.get<Movie[]>(this.url);
+  }
+
+
+   addComment(movie: Movie): Observable<any> {
+     return this.http.put(this.url, movie, httpOptions);
+   }
+
+
+
   clearData() {
-    this.data = undefined;
+    this.movie = undefined;
   }
 }

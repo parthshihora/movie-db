@@ -2,321 +2,159 @@ import { Movie } from './movie';
 
 export const MOVIES: Movie[] = [
   {
+    id : 1,
     title: 'Movie 1',
     description: 'Drama/Comedy',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
   },
   {
+    id : 2,
     title: 'Movie 2',
     description: 'Sci-Fi',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
+
   },
   {
+    id : 3,
     title: 'Movie 3',
     description: 'Thriller',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
+
   },
   {
+    id : 4,
     title: 'Movie 4',
     description: 'Comedy',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
+
   },
   {
+    id : 5,
     title: 'Movie 5',
     description: 'Drama/Comedy',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
   },
   {
-    title: 'Movie 1',
+    id : 6,
+    title: 'Movie 5',
     description: 'Drama/Comedy',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
   },
   {
-    title: 'Movie 1',
+    id : 7,
+    title: 'Movie 5',
     description: 'Drama/Comedy',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
   },
   {
-    title: 'Movie 1',
+    id : 8,
+    title: 'Movie 5',
     description: 'Drama/Comedy',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
   },
   {
-    title: 'Movie 1',
+    id : 9,
+    title: 'Movie 5',
     description: 'Drama/Comedy',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
   },
   {
-    title: 'Movie 1',
+    id : 10,
+    title: 'Movie 5',
     description: 'Drama/Comedy',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
   },
   {
-    title: 'Movie 1',
+    id : 1,
+    title: 'Movie 5',
     description: 'Drama/Comedy',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
   },
   {
-    title: 'Movie 1',
+    id : 1,
+    title: 'Movie 5',
     description: 'Drama/Comedy',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
   },
   {
-    title: 'Movie 1',
+    id : 11,
+    title: 'Movie 5',
     description: 'Drama/Comedy',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
   },
   {
-    title: 'Movie 1',
+    id : 12,
+    title: 'Movie 5',
     description: 'Drama/Comedy',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
   },
   {
-    title: 'Movie 1',
+    id : 13,
+    title: 'Movie 5',
     description: 'Drama/Comedy',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
   },
   {
-    title: 'Movie 1',
+    id : 14,
+    title: 'Movie 5',
     description: 'Drama/Comedy',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
   },
   {
-    title: 'Movie 1',
+    id : 15,
+    title: 'Movie 5',
     description: 'Drama/Comedy',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
   },
   {
-    title: 'Movie 1',
+    id : 16,
+    title: 'Movie 5',
     description: 'Drama/Comedy',
     avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
   },
   {
-    title: 'Movie 1',
+    id : 17,
+    title: 'Movie 5',
     description: 'Drama/Comedy',
     avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
-  },
-  {
-    title: 'Movie 1',
-    description: 'Drama/Comedy',
-    avgRating: 2,
-    myRating: 4
+    myRating: 4,
+    comment: []
   },
 ];
+

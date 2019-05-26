@@ -1,5 +1,16 @@
-<div *ngIf="data">
+<div *ngIf="movie">
 
-  <h2>{{data.description}}</h2>
+  <ul class="list-group">
+    <li class="list-group-item">Title : {{movie.title}}</li>
+    <li class="list-group-item">Avg Rating : {{movie.avgRating}}</li>
+    <li class="list-group-item">About : {{movie.description}}</li>
+    <li class="list-group-item">Comment {{movie.comment}}</li>
+
+  </ul>
+  <input  type="text"   placeholder="Type your comment.." #comment>
+  <button type="button" (click)="addComment(comment.value)" class="btn  btn-raised btn-yellow">Add</button>
+
+
 
 </div>
+
