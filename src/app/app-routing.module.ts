@@ -2,10 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {MovieDetailComponent} from './movie-detail/movie-detail.component';
 import {MoviesComponent} from './movies/movies.component';
+import {LoginComponent} from './login/login.component';
 
 const routes: Routes = [
   {
     path: '',
+    component: LoginComponent
+  },
+  {
+    path: 'all-movies',
     component: MoviesComponent
   },
   {

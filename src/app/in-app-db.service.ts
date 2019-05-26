@@ -9,6 +9,29 @@ export class InAppDBService implements InMemoryDbService {
 
   createDb() {
 
+    const users = [
+      {
+       username: 'parth',
+        password: '12345',
+        role: ''
+      },
+      {
+        username: 'chintu',
+        password: '12345',
+        role: ''
+      },
+      {
+        username: 'maitri',
+        password: '12345',
+        role: ''
+      },
+      {
+        username: 'admin',
+        password: 'admin',
+        role: 'admin'
+      }
+    ];
+
     const movies = [
       {
         id : 1,
@@ -167,7 +190,7 @@ export class InAppDBService implements InMemoryDbService {
       },
   ];
 
-    return {movies};
+    return {movies, users};
   }
 
   genId(movies: Movie[]): number {

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Movie } from './movie';
+import { User } from './user';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -18,6 +19,7 @@ export class DataFlowService {
 
   private movie;
   private url = 'api/movies';
+  private urlUser = 'api/users';
 
   setMovie(movie) {
     this.movie = movie;
@@ -33,6 +35,9 @@ export class DataFlowService {
     return this.http.get<Movie[]>(this.url);
   }
 
+  getUsers (): Observable<User[]> {
+    return this.http.get<User[]>(this.urlUser);
+  }
 
    addComment(movie: Movie): Observable<any> {
      return this.http.put(this.url, movie, httpOptions);

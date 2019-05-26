@@ -27,7 +27,6 @@ export class MovieDetailComponent implements OnInit {
 
   addComment(comment) {
     this.movie.comment.push(comment);
-    console.log('this is selected movie with comment', this.movie);
     this.dataFlowService.addComment(this.movie)
       .subscribe(() => this.location.back());
   }
