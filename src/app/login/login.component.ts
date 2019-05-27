@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -28,8 +29,8 @@ export class LoginComponent implements OnInit {
   }
   checkUser(username, password) {
     for (let i = 0; i < this.users.length; i++) {
-      console.log(username, password)
       if (this.users[i].username === username && this.users[i].password === password) {
+        this.dataFlowService.setUser(this.users[i]);
         this.router.navigate(['all-movies']);
       }
 

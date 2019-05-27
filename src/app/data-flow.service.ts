@@ -25,10 +25,18 @@ export class DataFlowService {
     this.movie = movie;
   }
 
+  setUser(user) {
+    localStorage.setItem('currentUser', JSON.stringify(user));
+  }
+
   getMovie() {
     const temp = this.movie;
-    this.clearData();
     return temp;
+  }
+
+  getUser() {
+    const user = localStorage.getItem('currentUser');
+    return JSON.parse(user);
   }
 
   getMovies (): Observable<Movie[]> {
@@ -43,9 +51,7 @@ export class DataFlowService {
      return this.http.put(this.url, movie, httpOptions);
    }
 
-
-
-  clearData() {
+ /* clearData() {
     this.movie = undefined;
-  }
+  } */
 }
