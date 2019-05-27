@@ -27,4 +27,8 @@ export class AdminServiceService {
     const movieUrl = `${this.url}/${id}`;
     return this.http.delete<Movie>(movieUrl, httpOptions);
   }
+
+  addMovie(movie: Movie): Observable<Movie> {
+    return this.http.post<Movie>(this.url, movie, httpOptions);
+  }
 }

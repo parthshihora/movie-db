@@ -5,8 +5,7 @@ import { DataFlowService} from '../data-flow.service';
 import { User } from '../user';
 import { AdminServiceService } from '../admin-service.service';
 import { Observable, Subject } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
-
+import {NONE_TYPE} from '@angular/compiler/src/output/output_ast';
 
 
 
@@ -22,8 +21,6 @@ export class MoviesComponent implements OnInit {
   @Input() user: User;
   @Input() movie: Movie;
   sorted = false;
-  private searchText = new Subject<string>();
-  movies$: Observable<Movie[]>;
 
 
 
@@ -48,6 +45,18 @@ export class MoviesComponent implements OnInit {
 
   }
 
+  addMovie(title, description):void {
+    const newMovie = new Movie;
+    newMovie.title = title;
+    newMovie.description = description;
+    newMovie.avgRating = 0;
+    newMovie.myRating = 0;
+    newMovie.comment = [];
+    this.adminService.addMovie(newMovie).subscribe(movie => {
+      this.movies.push(movie);
+    });
+  }
+
   deleteMovie(movie: Movie): void {
     this.adminService.deleteMovie(movie).subscribe();
     this.getMovies();
@@ -66,7 +75,6 @@ export class MoviesComponent implements OnInit {
       return elem2.avgRating - elem1.avgRating;
     });
   }
-
 
 
   searchMovie(searchTerm, event) {
@@ -88,6 +96,4 @@ export class MoviesComponent implements OnInit {
 }
 
 
-// For searching
 
-//https://www.youtube.com/watch?v=1TFSibbnkj0

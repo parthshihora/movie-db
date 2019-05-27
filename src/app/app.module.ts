@@ -10,7 +10,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InAppDBService } from './in-app-db.service';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
-import { MovieSearchComponent } from './movie-search/movie-search.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +18,6 @@ import { MovieSearchComponent } from './movie-search/movie-search.component';
     MoviesComponent,
     MovieDetailComponent,
     LoginComponent,
-    MovieSearchComponent
   ],
   imports: [
     BrowserModule,

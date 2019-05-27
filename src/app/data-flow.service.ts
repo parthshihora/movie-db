@@ -15,7 +15,8 @@ const httpOptions = {
 })
 export class DataFlowService {
 
-  constructor( private http: HttpClient ) { }
+  constructor(private http: HttpClient) {
+  }
 
   private movie;
   private url = 'api/movies';
@@ -39,26 +40,27 @@ export class DataFlowService {
     return JSON.parse(user);
   }
 
-  getMovies (): Observable<Movie[]> {
+  getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.url);
   }
 
-  getUsers (): Observable<User[]> {
+  getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.urlUser);
   }
 
-   addComment(movie: Movie): Observable<any> {
-     return this.http.put(this.url, movie, httpOptions);
-   }
+  addComment(movie: Movie): Observable<any> {
+    return this.http.put(this.url, movie, httpOptions);
+  }
 
 
-    searchMovie(term: String): Observable<Movie[]> {
-     console.log('in service, this is search term', term);
-       return this.http.get<Movie[]>(`${this.url}/?title=${term}`);
+  searchMovie(term: String): Observable<Movie[]> {
+    console.log('in service, this is search term', term);
+    return this.http.get<Movie[]>(`${this.url}/?title=${term}`);
 
 
+    /* clearData() {
+       this.movie = undefined;
+     } */
 
- /* clearData() {
-    this.movie = undefined;
-  } */
+  }
 }

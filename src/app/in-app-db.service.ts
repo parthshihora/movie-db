@@ -165,8 +165,8 @@ export class InAppDBService implements InMemoryDbService {
     return {movies, users};
   }
 
- /* genId(movies: Movie[]): number {
+  genId(movies: Movie[]): number {
     return movies.length > 0 ? Math.max(...movies.map(movie => movie.id)) + 1 : 1;
-  } */
+  }
 
 }
