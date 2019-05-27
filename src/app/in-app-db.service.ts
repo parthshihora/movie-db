@@ -11,21 +11,25 @@ export class InAppDBService implements InMemoryDbService {
 
     const users = [
       {
+        id: 1,
        username: 'parth',
         password: '12345',
         role: ''
       },
       {
+        id: 2,
         username: 'chintu',
         password: '12345',
         role: ''
       },
       {
+        id: 3,
         username: 'maitri',
         password: '12345',
         role: ''
       },
       {
+        id: 4,
         username: 'admin',
         password: 'admin',
         role: 'admin'
@@ -161,8 +165,8 @@ export class InAppDBService implements InMemoryDbService {
     return {movies, users};
   }
 
-  genId(movies: Movie[]): number {
+ /* genId(movies: Movie[]): number {
     return movies.length > 0 ? Math.max(...movies.map(movie => movie.id)) + 1 : 1;
-  }
+  } */
 
 }

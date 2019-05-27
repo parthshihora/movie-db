@@ -3,7 +3,11 @@ import { Movie } from '../movie';
 import { Router } from '@angular/router';
 import { DataFlowService} from '../data-flow.service';
 import { User } from '../user';
-import {AdminServiceService} from '../admin-service.service';
+import { AdminServiceService } from '../admin-service.service';
+import { Observable, Subject } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
+
 
 
 @Component({
@@ -17,9 +21,10 @@ export class MoviesComponent implements OnInit {
   movies: Movie[];
   @Input() user: User;
   @Input() movie: Movie;
-  sortedMovies: Movie[];
-
   sorted = false;
+  private searchText = new Subject<string>();
+  movies$: Observable<Movie[]>;
+
 
 
   constructor(private router: Router, private dataFlowService: DataFlowService, private adminService: AdminServiceService) { }
@@ -60,6 +65,20 @@ export class MoviesComponent implements OnInit {
     this.movies = this.movies.sort(function (elem1, elem2) {
       return elem2.avgRating - elem1.avgRating;
     });
+  }
+
+
+
+  searchMovie(searchTerm, event) {
+    if (event.keyCode === 13) {
+
+
+      this.dataFlowService.searchMovie(searchTerm).subscribe(movies => {
+        this.movies = movies;
+        console.log('this are movie', this.movies);
+
+      });
+    }
   }
 
   logout() {

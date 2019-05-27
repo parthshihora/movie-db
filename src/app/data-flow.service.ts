@@ -51,6 +51,13 @@ export class DataFlowService {
      return this.http.put(this.url, movie, httpOptions);
    }
 
+
+    searchMovie(term: String): Observable<Movie[]> {
+     console.log('in service, this is search term', term);
+       return this.http.get<Movie[]>(`${this.url}/?title=${term}`);
+
+
+
  /* clearData() {
     this.movie = undefined;
   } */
