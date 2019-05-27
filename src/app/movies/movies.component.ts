@@ -17,7 +17,9 @@ export class MoviesComponent implements OnInit {
   movies: Movie[];
   @Input() user: User;
   @Input() movie: Movie;
+  sortedMovies: Movie[];
 
+  sorted = false;
 
 
   constructor(private router: Router, private dataFlowService: DataFlowService, private adminService: AdminServiceService) { }
@@ -53,8 +55,20 @@ export class MoviesComponent implements OnInit {
     this.adminService.updateMovie(this.movie).subscribe();
   }
 
+  sortMovies() {
+    this.sorted = true;
+    this.movies = this.movies.sort(function (elem1, elem2) {
+      return elem2.avgRating - elem1.avgRating;
+    });
+  }
+
   logout() {
     localStorage.removeItem('currentUser');
     this.router.navigate(['']);
   }
 }
+
+
+// For searching
+
+//https://www.youtube.com/watch?v=1TFSibbnkj0
