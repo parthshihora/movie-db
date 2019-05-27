@@ -41,6 +41,11 @@ export class MoviesComponent implements OnInit {
 
   }
 
+  deleteMovie(movie: Movie): void {
+    this.adminService.deleteMovie(movie).subscribe();
+    this.getMovies();
+  }
+
   updateMovie(title, description) {
     this.movie = this.dataFlowService.getMovie();
     this.movie.title = title;

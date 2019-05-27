@@ -45,7 +45,7 @@
         <div class="module hero">
           <h4>{{movie.title}}</h4>
           <button style="background-color: #607d8b" data-toggle="modal" (click)="setMovie(movie)" data-target="#exampleModalCenter" class="btn btn-secondary my-2 my-sm-2" type="button">Update</button>
-          <button style="background-color: #607d8b; margin-left:10px"   class="btn btn-secondary my-2 my-sm-2" type="button">Delete</button>
+          <button style="background-color: #607d8b; margin-left:10px"  (click)="deleteMovie(movie)"  class="btn btn-secondary my-2 my-sm-2" type="button">Delete</button>
         </div>
       </div>
     </div>

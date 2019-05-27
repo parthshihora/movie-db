@@ -20,4 +20,11 @@ export class AdminServiceService {
   updateMovie(movie: Movie): Observable<any> {
     return this.http.put(this.url, movie, httpOptions);
   }
+
+  deleteMovie(movie: Movie | number): Observable<Movie> {
+    const id = typeof movie === 'number' ? movie : movie.id;
+
+    const movieUrl = `${this.url}/${id}`;
+    return this.http.delete<Movie>(movieUrl, httpOptions);
+  }
 }
