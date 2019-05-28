@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Movie } from '../movie';
 import { Router } from '@angular/router';
 import { DataFlowService} from '../data-flow.service';
@@ -17,9 +17,9 @@ export class MoviesComponent implements OnInit {
 
 
   movies: Movie[];
-  @Input() user: User;
-  @Input() movie: Movie;
   sorted = false;
+  user: User;
+  movie: Movie;
 
 
 
@@ -33,7 +33,6 @@ export class MoviesComponent implements OnInit {
   getMovies() {
     this.dataFlowService.getMovies().subscribe(movies => {
       this.movies = movies;
-      console.log('all movie', this.movies);
     });
   }
 

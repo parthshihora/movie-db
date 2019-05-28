@@ -6,7 +6,6 @@ import { Movie } from '../movie';
 import { User } from '../user';
 import { UserRating } from '../user-rating';
 import { AdminServiceService } from '../admin-service.service';
-import { MoviesComponent} from '../movies/movies.component';
 
 
 @Component({
@@ -20,7 +19,6 @@ export class MovieDetailComponent implements OnInit {
   user: User;
   currentUser: User;
   userRating: UserRating[];
-  commentValue: string;
 
 
 
