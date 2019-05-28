@@ -4,8 +4,7 @@ import { Router } from '@angular/router';
 import { DataFlowService} from '../data-flow.service';
 import { User } from '../user';
 import { AdminServiceService } from '../admin-service.service';
-import { Observable, Subject } from 'rxjs';
-import {NONE_TYPE} from '@angular/compiler/src/output/output_ast';
+
 
 
 
@@ -79,12 +78,8 @@ export class MoviesComponent implements OnInit {
 
   searchMovie(searchTerm, event) {
     if (event.keyCode === 13) {
-
-
       this.dataFlowService.searchMovie(searchTerm).subscribe(movies => {
         this.movies = movies;
-        console.log('this are movie', this.movies);
-
       });
     }
   }

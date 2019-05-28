@@ -3,6 +3,7 @@ import { Movie } from './movie';
 import { User } from './user';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {UserRating} from './user-rating';
 
 
 const httpOptions = {
@@ -21,6 +22,7 @@ export class DataFlowService {
   private movie;
   private url = 'api/movies';
   private urlUser = 'api/users';
+  private userRatingURL = 'api/user_rating';
 
   setMovie(movie) {
     this.movie = movie;
@@ -44,6 +46,10 @@ export class DataFlowService {
     return this.http.get<Movie[]>(this.url);
   }
 
+  getUserRatingObj(): Observable<UserRating[]> {
+    return this.http.get<UserRating[]>(this.userRatingURL);
+  }
+
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.urlUser);
   }
@@ -52,15 +58,18 @@ export class DataFlowService {
     return this.http.put(this.url, movie, httpOptions);
   }
 
+  addUserRating(userRating: UserRating): Observable<UserRating> {
+    return this.http.post<UserRating>(this.userRatingURL, userRating, httpOptions);
+  }
 
+  updateUser(user: User): Observable<any> {
+    return this.http.put(this.urlUser, user, httpOptions);
+  }
+
+  getCurrentUser(id: number): Observable<User> {
+    return this.http.get<User>(`${this.urlUser}/${id}`);
+  }
   searchMovie(term: String): Observable<Movie[]> {
-    console.log('in service, this is search term', term);
     return this.http.get<Movie[]>(`${this.url}/?title=${term}`);
-
-
-    /* clearData() {
-       this.movie = undefined;
-     } */
-
   }
 }

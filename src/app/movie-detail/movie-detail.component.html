@@ -2,6 +2,20 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" style="font-size: medium" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Rate this Movie
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <form>
+              <a class="dropdown-item"><input name="rating" (click)="setRating(1)" type="radio">&nbsp;&nbsp;&nbsp;1</a>
+              <a class="dropdown-item"><input name="rating" (click)="setRating(2)" type="radio">&nbsp;&nbsp;&nbsp;2</a>
+              <a class="dropdown-item"><input name="rating" (click)="setRating(3)" type="radio">&nbsp;&nbsp;&nbsp;3</a>
+              <a class="dropdown-item"><input name="rating" (click)="setRating(4)" type="radio">&nbsp;&nbsp;&nbsp;4</a>
+              <a class="dropdown-item"><input name="rating" (click)="setRating(5)" type="radio">&nbsp;&nbsp;&nbsp;5</a>
+            </form>
+          </div>
+        </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -15,7 +29,7 @@
       <h5 class="card-title">{{movie.title}}</h5>
       <p style="font-size: small" class="card-text"> {{movie.description}}</p>
       <p style="font-size: small" class="card-text">Avg. Rating: {{movie.avgRating}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Rating: {{movie.myRating}} </p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Rating: {{currentUserRating}} </p>
     </div>
     <ul style="font-size: medium" class="list-group list-group-flush" *ngFor="let comment of movie.comment">
       <li class="list-group-item"> {{comment}}</li>
