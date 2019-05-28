@@ -31,7 +31,10 @@ export class MoviesComponent implements OnInit {
   }
 
   getMovies() {
-    this.dataFlowService.getMovies().subscribe(movies => this.movies = movies);
+    this.dataFlowService.getMovies().subscribe(movies => {
+      this.movies = movies;
+      console.log('all movie', this.movies);
+    });
   }
 
   onSelect(movie: Movie): void {
@@ -62,6 +65,7 @@ export class MoviesComponent implements OnInit {
   }
 
   updateMovie(title, description) {
+    console.log('new data', title, description);
     this.movie = this.dataFlowService.getMovie();
     this.movie.title = title;
     this.movie.description = description;

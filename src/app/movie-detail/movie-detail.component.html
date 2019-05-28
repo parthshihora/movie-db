@@ -18,7 +18,7 @@
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <input style="border-radius: 2rem; width: 18rem;" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button (click)="logout()" style="background-color: #607d8b" class="btn btn-secondary my-2 my-sm-2" type="submit">Logout</button>
       </form>
     </div>
@@ -35,11 +35,12 @@
       <li class="list-group-item"> {{comment}}</li>
     </ul>
   </div>
-
-  <form style="align-items: center;margin-left: 2rem;" class="form-inline my-2 my-lg-0">
-    <input style="width: 20rem;" class="form-control mr-sm-2" type="search" placeholder="Comment..." aria-label="Search" #comment>
+  <form style="width: 25rem;margin-left:35rem;" class="form-inline my-2 my-lg-0">
+    <input style="border-radius: 2rem; width: 20rem;" class="form-control mr-sm-2" type="search" placeholder="Comment..." aria-label="Search" #comment>
     <button type="button" (click)="addComment(comment.value)" style="background-color: #607d8b" class="btn btn-secondary my-2 my-sm-2">Add</button>
   </form>
+
+
 
 </div>
 

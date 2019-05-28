@@ -7,8 +7,8 @@
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" (keydown)="searchMovie(searchTerm.value,$event)" #searchTerm>
-        <button (click)="logout()" style="background-color: #607d8b" class="btn btn-secondary my-2 my-sm-2" type="button">Logout</button>
+        <input style="border-radius: 2rem; width: 18rem;" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" (keydown)="searchMovie(searchTerm.value,$event)" #searchTerm>
+        <button  (click)="logout()" style="background-color: #607d8b" class="btn btn-secondary my-2 my-sm-2" type="button">Logout</button>
       </form>
     </div>
   </nav>
@@ -23,8 +23,8 @@
 
 
   <ng-template #elseBlock>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="collapse navbar-collapse" id="navbarSupportedContent-1">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
@@ -32,12 +32,12 @@
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-
-          <button (click)="logout()" style="background-color: #607d8b" class="btn btn-secondary my-2 my-sm-2" type="submit">Logout</button>
+          <input style="border-radius: 2rem; width: 18rem;" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" (keydown)="searchMovie(searchTerm.value,$event)" #searchTerm>
+          <button  (click)="logout()" style="background-color: #607d8b" class="btn btn-secondary my-2 my-sm-2" type="button">Logout</button>
         </form>
       </div>
     </nav>
+
     <div class="grid grid grid-pad">
       <div *ngFor="let movie of movies" class="col-1-4">
         <div class="module hero">
@@ -59,15 +59,15 @@
           </div>
           <div class="modal-body">
               <div style="margin-bottom: 1rem" class="form-label-group">
-                <input  class="form-control border border-left-0 w-10" placeholder="Title" style="background-image: none !important; background-color: #EFEFEF;" #title>
+                <input  class="form-control border border-left-0 w-10" placeholder="Title" style="background-image: none !important; background-color: #EFEFEF;" #updateTitle>
               </div>
               <div class="form-label-group">
-                <input   class="form-control border border-left-0 w-10" placeholder="Description" style="background-image: none !important; background-color: #EFEFEF;" #description>
+                <input   class="form-control border border-left-0 w-10" placeholder="Description" style="background-image: none !important; background-color: #EFEFEF;" #updatedDescription>
               </div>
           </div>
           <div class="modal-footer">
             <button style="background-color: #607d8b" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" (click)="updateMovie(title.value, description.value)">Save changes</button>
+            <button type="button" class="btn btn-primary" (click)="updateMovie(updateTitle.value, updatedDescription.value)">Save changes</button>
           </div>
         </div>
       </div>

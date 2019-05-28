@@ -18,6 +18,7 @@ export class AdminServiceService {
   constructor( private http: HttpClient) { }
 
   updateMovie(movie: Movie): Observable<any> {
+    console.log('updated movie', movie);
     return this.http.put(this.url, movie, httpOptions);
   }
 
