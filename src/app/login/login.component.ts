@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private dataFlowService: DataFlowService) { }
 
   users: User[];
+  flag = false;
 
   ngOnInit() {
     this.getUsers();
@@ -31,9 +32,13 @@ export class LoginComponent implements OnInit {
     for (let i = 0; i < this.users.length; i++) {
       if (this.users[i].username === username && this.users[i].password === password) {
         this.dataFlowService.setUser(this.users[i]);
+        this.flag = true;
         this.router.navigate(['all-movies']);
       }
-
     }
+    if (!this.flag) {
+      alert('Please Try Again');
+    }
+
   }
 }

@@ -44,7 +44,7 @@ export class MoviesComponent implements OnInit {
 
   }
 
-  addMovie(title, description):void {
+  addMovie(title, description): void {
     const newMovie = new Movie;
     newMovie.title = title;
     newMovie.description = description;

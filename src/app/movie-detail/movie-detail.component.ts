@@ -5,6 +5,8 @@ import { Location } from '@angular/common';
 import { Movie } from '../movie';
 import { User } from '../user';
 import { UserRating } from '../user-rating';
+import { AdminServiceService } from '../admin-service.service';
+
 
 
 @Component({
@@ -18,11 +20,11 @@ export class MovieDetailComponent implements OnInit {
   user: User;
   currentUser: User;
   userRating: UserRating[];
-  currentUserRating = 0;
 
-
-  constructor(private router: Router, private dataFlowService: DataFlowService, private location: Location
-  ) { }
+  constructor(
+    private router: Router,
+    private dataFlowService: DataFlowService,
+    private location: Location, private adminService: AdminServiceService) { }
 
 
   ngOnInit() {
@@ -31,7 +33,6 @@ export class MovieDetailComponent implements OnInit {
 
     this.dataFlowService.getCurrentUser(this.user.id).subscribe(userObj => {
       this.currentUser = userObj;
-      console.log('this is current user', this.currentUser);
       this.getUserRatings();
     });
   }
@@ -52,6 +53,16 @@ export class MovieDetailComponent implements OnInit {
       }
   }
 
+  addRatingToMovie(rating) {
+    this.movie.allRatings.push(rating);
+    let sum = 0;
+    for (let i = 0; i < this.movie.allRatings.length; i++) {
+      sum += this.movie.allRatings[i];
+    }
+    this.movie.avgRating = sum / this.movie.allRatings.length;
+    this.adminService.updateMovie(this.movie).subscribe();
+  }
+
   setRating(rating) {
     this.user = this.dataFlowService.getUser();
     const newUserRating = new UserRating;
@@ -61,6 +72,7 @@ export class MovieDetailComponent implements OnInit {
     this.user.ratedMovie = true;
     this.dataFlowService.updateUser(this.user).subscribe();
     this.addRating(newUserRating);
+    this.addRatingToMovie(rating);
 
   }
 
@@ -78,11 +90,10 @@ export class MovieDetailComponent implements OnInit {
   showRating(userRating) {
     for (let i = 0; i < userRating.length; i++) {
       if (this.user.id === userRating[i].userId && this.movie.id === userRating[i].movieId) {
-        this.currentUserRating = userRating[i].rating;
         this.movie.myRating = userRating[i].rating;
       }
     }
-}
+  }
 
   logout() {
     localStorage.removeItem('currentUser');
@@ -92,5 +103,3 @@ export class MovieDetailComponent implements OnInit {
 }
 
 
-// To call logout function
-//https://www.c-sharpcorner.com/article/simple-way-to-execute-a-function-in-a-component-from-another-component/

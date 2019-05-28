@@ -29,7 +29,7 @@
       <h5 class="card-title">{{movie.title}}</h5>
       <p style="font-size: small" class="card-text"> {{movie.description}}</p>
       <p style="font-size: small" class="card-text">Avg. Rating: {{movie.avgRating}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Rating: {{currentUserRating}} </p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Rating: {{movie.myRating}} </p>
     </div>
     <ul style="font-size: medium" class="list-group list-group-flush" *ngFor="let comment of movie.comment">
       <li class="list-group-item"> {{comment}}</li>

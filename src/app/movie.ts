@@ -5,4 +5,5 @@ export class Movie {
   avgRating: number;
   myRating: number;
   comment: any[];
+  allRatings: number[];
 }
