@@ -6,7 +6,7 @@ import { Movie } from '../movie';
 import { User } from '../user';
 import { UserRating } from '../user-rating';
 import { AdminServiceService } from '../admin-service.service';
-
+import { MoviesComponent} from '../movies/movies.component';
 
 
 @Component({
@@ -20,6 +20,10 @@ export class MovieDetailComponent implements OnInit {
   user: User;
   currentUser: User;
   userRating: UserRating[];
+  commentValue: string;
+
+
+
 
   constructor(
     private router: Router,
@@ -35,12 +39,14 @@ export class MovieDetailComponent implements OnInit {
       this.currentUser = userObj;
       this.getUserRatings();
     });
+
   }
 
   addComment(comment) {
+
     this.movie.comment.push(comment);
     this.dataFlowService.addComment(this.movie)
-      .subscribe(() => this.location.back());
+      .subscribe();
   }
 
   getUserRatings() {
@@ -52,6 +58,7 @@ export class MovieDetailComponent implements OnInit {
         });
       }
   }
+
 
   addRatingToMovie(rating) {
     this.movie.allRatings.push(rating);
